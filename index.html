@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Login Error</title>
+  <style>
+    body { font-family: sans-serif; padding: 2rem; max-width: 600px; margin: auto; }
+    .box { background: #fce4e4; border: 1px solid #f44336; padding: 1rem; border-radius: 8px; }
+    h1 { color: #f44336; }
+  </style>
+</head>
+<body>
+  <div class="box">
+    <h1>Login Failed</h1>
+    <p><strong>Error:</strong> <span id="error">Loading...</span></p>
+    <p><strong>Details:</strong> <span id="desc">Loading...</span></p>
+    <p>If you believe this is a mistake, please contact support.</p>
+  </div>
+
+  <script>
+    const params = new URLSearchParams(window.location.search);
+    document.getElementById("error").innerText = params.get("error") || "Unknown";
+    document.getElementById("desc").innerText = params.get("error_description") || "No details provided.";
+  </script>
+</body>
+</html>
